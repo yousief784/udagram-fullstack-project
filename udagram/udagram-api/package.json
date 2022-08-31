@@ -13,7 +13,7 @@
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
     "deploy": "npm run build && ls && cd www && echo ==================== && ls && echo Hello1 && eb deploy Udagram-env && cd..",
-    "build": "npm install -f && npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cp -R \".elasticbeanstalk\" \"www/.elasticbeanstalk\" && ls",
+    "build": "npm install -f && npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cp -R \".elasticbeanstalk\" \"www/.elasticbeanstalk\" && cd www && ls && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
