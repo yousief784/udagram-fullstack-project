@@ -12,7 +12,7 @@
     "dev": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
-    "deploy": "npm run build && ls && cd www && echo ==================== && ls && echo Hello1 && cd..",
+    "deploy": "npm run build && ls && cd www && echo ==================== && eb deploy Udagram-env && ls && echo Hello1 && cd ..",
     "build": "npm i -f && npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cp -R -f \".elasticbeanstalk/\" \"www/.elasticbeanstalk/\" && cp smb.conf www/smb.conf",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
