@@ -16,3 +16,5 @@ global:
   repository: https://github.com/yousief784/test3
   sc: git
   workspace_type: Application
+deploy:
+  path: ./www/Archive.zip

@@ -12,8 +12,8 @@
     "dev": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
-    "deploy": "npm run build && ls && cd www && echo ==================== && eb deploy Udagram-env && ls && echo Hello1 && cd ..",
-    "build": "npm i -f && npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cp -R -f \".elasticbeanstalk/\" \"www/.elasticbeanstalk/\" && cp smb.conf www/smb.conf",
+    "deploy": "npm run build && eb list && eb use Udagram-env && eb deploy",
+    "build": "npm run clean && tsc && cp -rf src/config www/config && cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && bestzip Archive.zip * && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -24,6 +24,7 @@
     "@types/jsonwebtoken": "^8.3.2",
     "aws-sdk": "^2.429.0",
     "bcryptjs": "2.4.3",
+    "bestzip": "^2.2.1",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
