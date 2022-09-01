@@ -8,7 +8,7 @@
     "start": "npx ng serve",
     "build": "npx ng build",
     "deploy": "npm install -f && npm run build && chmod +x ./bin/deploy.sh && ./bin/deploy.sh",
-    "test": "npm install -f && npx ng test --watch=false",
+    "test": "npm install -f && npx ng test --no-watch",
     "lint": "npx ng lint",
     "e2e": "npx ng e2e"
   },
