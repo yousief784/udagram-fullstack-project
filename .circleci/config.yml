@@ -70,7 +70,7 @@ jobs:
           # TODO: Install, build, deploy in Backend app
           command: |
             echo "# TODO: Install, build, deploy in Backend app"
-            npm run api:deloy
+            npm run api:deploy
             
 workflows:
   udagram:
