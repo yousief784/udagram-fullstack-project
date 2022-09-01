@@ -14,7 +14,8 @@ jobs:
     steps:
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
-
+      - addons:
+          chrome: stable
       # install node and checkout code
       - node/install:
           node-version: '14.15'         
@@ -25,6 +26,7 @@ jobs:
           command: |
             google-chrome --version
             chromedriver --version
+      
       - run:
           name: Install Front-End Dependencies
           command: |
