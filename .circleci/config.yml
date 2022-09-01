@@ -45,13 +45,17 @@ jobs:
             npm run frontend:test
       
       # TODO: test the backend
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - run:
-          name: Front-End test
+          name: Front-End 
           command: |
+            google-chrome --version
+            chromedriver --version
             echo "TODO: test the backend"
             npm run api:test
       # TODO: Build the frontend app
-      
+
       - run:
           name: Front-End Build
           command: |
