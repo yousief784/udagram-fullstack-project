@@ -11,11 +11,10 @@ jobs:
     docker:
       # the base image can run most needed actions with orbs
       - image: "cimg/node:14.15"
+        
     steps:
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
-      - addons:
-          chrome: stable
       # install node and checkout code
       - node/install:
           node-version: '14.15'         
