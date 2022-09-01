@@ -11,6 +11,9 @@ jobs:
       # the base image can run most needed actions with orbs
       - image: "cimg/node:14.15"
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+
       # install node and checkout code
       - node/install:
           node-version: '14.15'         
@@ -41,17 +44,15 @@ jobs:
       - run:
           name: Front-End test
           command: |
+            google-chrome --version
+            chromedriver --version
             echo "TODO: test the frontend"
             npm run frontend:test
       
       # TODO: test the backend
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
       - run:
           name: Front-End 
           command: |
-            google-chrome --version
-            chromedriver --version
             echo "TODO: test the backend"
             npm run api:test
       # TODO: Build the frontend app
