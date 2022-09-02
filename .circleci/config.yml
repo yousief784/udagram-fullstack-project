@@ -53,7 +53,7 @@ jobs:
       - save_cache:
           key: ng-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
-            - "node_modules"
+            - "../udagram/udagram-frontend/node_modules"
       # TODO: test the frontend
       - run:
           name: Front-End test
