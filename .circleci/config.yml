@@ -47,6 +47,13 @@ jobs:
             echo "TODO: Lint the frontend"
             npm run frontend:lint
       
+      - restore_cache:
+          key: ng-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run: npm run frontend:install
+      - save_cache:
+          key: ng-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - "node_modules"
       # TODO: test the frontend
       - run:
           name: Front-End test
