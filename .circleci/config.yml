@@ -4,7 +4,7 @@ orbs:
   node: circleci/node@5.0.2
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
-  # browser-tools: circleci/browser-tools@1.2.3
+  browser-tools: circleci/browser-tools@1.2.3
   # different jobs are calles later in the workflows sections
 jobs:
   build:
@@ -13,8 +13,8 @@ jobs:
       - image: "cimg/node:14.15-browsers"
 
     steps:
-      # - browser-tools/install-chrome
-      # - browser-tools/install-chromedriver
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       # install node and checkout code
       - node/install:
           node-version: '14.15'         
