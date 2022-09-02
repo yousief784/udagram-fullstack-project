@@ -4,28 +4,19 @@ orbs:
   node: circleci/node@5.0.2
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
-  browser-tools: circleci/browser-tools@1.2.3
   # different jobs are calles later in the workflows sections
 jobs:
   build:
     docker:
       # the base image can run most needed actions with orbs
-      - image: "cimg/node:14.15-browsers"
+      - image: "cimg/node:14.15"
 
     steps:
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
       # install node and checkout code
       - node/install:
           node-version: '14.15'         
       - checkout
-      # Use root level package.json to install dependencies in the frontend app
-      - run:
-          name: Check install
-          command: |
-            google-chrome --version
-            chromedriver --version
-      
+      # Use root level package.json to install dependencies in the frontend app      
       - run:
           name: Install Front-End Dependencies
           command: |
